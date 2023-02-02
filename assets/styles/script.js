@@ -1,9 +1,9 @@
 var timerEl = document.querySelector("#timer");
 var questionsEl = document.querySelector("#questions");
-var optionsEl = document.querySelector("options");
+var optionsEl = document.querySelector("#options");
 var answersEl = document.querySelector("#answers");
 var startBtn = document.querySelector("#start");
-var initialsEl = document.querySelector("#nitials");
+var initialsEl = document.querySelector("#initials");
 var submitBtn = document.querySelector("#submit");
 var feedbackEl = document.querySelector("#feedback");
 
@@ -67,6 +67,7 @@ function nextQuestion() {
     //buttons for each option
     var optionsNode = document.createElement("button");
     optionsNode.setAttribute("class", "options");
+    optionsNode.setAttribute("class", "background");
     optionsNode.setAttribute("value", options);
 
     optionsNode.textContent = i + 1 + "." + options;
@@ -98,13 +99,14 @@ function endQuiz() {
     clearInterval(timerId);
     var endScreenEl = document.getElementById("end-screen");
     endScreenEl.removeAttribute("class")
+    endScreenEl.setAttribute("class", "center");
     var endResultEl = document.getElementById("end-result");
     endResultEl.textContent = time;
     //hide questions
     questionsEl.setAttribute("class", "hide");
 }
 
-function setTimer() {
+function clockTick() {
     time--;
     timerEl.textContent = time;
     if (time <= 0) {
@@ -123,6 +125,7 @@ function finalScore() {
         };
         highscores.push(startNewScore);
         window.localStorage.setItem("highscores", JSON.stringify(highscores));
+        location.replace("highscores.html");
     }
 }
 function initialsEnter(event) {

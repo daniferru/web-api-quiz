@@ -11,25 +11,26 @@
  </head>
 
  <body>
-    <div class="score">View Highscores</div>
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="score"><a href="highscores.html" style="text-decoration:none" class="text">View Highscores</a></div>
+    <div id="timer" class="timer">Time: <span id="time">0</span></div>
     <div class="wrapper">
         <div class="center" id="begin-screen">
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your scoretime by ten seconds.</p>
-        <button id="start">Start Quiz</button>
+        <button id="start" class="background">Start Quiz</button>
         </div>
 
         <div id="questions" class="hide">
-            <h2 id="question"></h2>
-            <div id="options"></div>
+            <h2 id="question" class="center"></h2>
+            <div class="center" id="options"></div>
         </div>
-
+        <div id="feedback" class="center"></div>
         <div id="end-screen" class="hide">
             <h2>All done!</h2>
-            <p>Your Final Score is .</p>
+            <p>Your Final Score is </p>
             <p>Enter initials:
-                <button id="submit">Submit</button>
+                <input type="text" id="initials">
+                <button id="submit" class="background">Submit</button>
             </p>
         </div>
 
